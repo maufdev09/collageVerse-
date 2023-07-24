@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
 
 
 const Login = () => {
     const [showPassord, setShowPassord] = useState(false);
+    const { signIn } = useContext(AuthContext);
+    const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
+
+
+
 
     const {
         handleSubmit,
@@ -16,8 +23,14 @@ const Login = () => {
 
 
       const onSubmit = (data) => {
-        console.log(data);
-      };
+        const { email, password } = data;
+        signIn(email, password)
+          .then((res) => {
+            navigate(from, { replace: true });
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });      };
 
 
     return (

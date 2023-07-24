@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProviders';
+import Search from '../Components/SearchSection';
 
 const Home = () => {
     const { user } = useContext(AuthContext);
 
     return (
         <div>
-            <h1>{user}</h1>
+          <Search></Search>
         </div>
     );
 };
