@@ -9,11 +9,14 @@ import Collage from "../Pages/Collage";
 import Apply from "../Pages/Apply";
 import PrivateRoutes from "./privateroute";
 import Mycollage from "../Pages/Mycollage";
+import EerrorPage from "../Components/ErrorPage";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<EerrorPage></EerrorPage>,
       children:[
         {
             path: "/",
@@ -37,7 +40,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/collage/:id",
-            element:<Collage></Collage>
+            element:<PrivateRoutes><Collage></Collage></PrivateRoutes>
         },
         {
             path: "/admission/:id",
@@ -46,6 +49,10 @@ const router = createBrowserRouter([
         {
             path: "/mycollage",
             element:<PrivateRoutes><Mycollage></Mycollage></PrivateRoutes>
+        },
+        {
+            path: "/profile",
+            element:<PrivateRoutes> <Profile></Profile> </PrivateRoutes>
         },
       ],
     },

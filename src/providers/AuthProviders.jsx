@@ -8,7 +8,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
-import Login from "../login/registration/Login";
 
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
@@ -59,6 +58,7 @@ useEffect(() => {
   // Login
   const signIn = (email, password) => {
     setLoading(true);
+    console.log(email,password);
     return signInWithEmailAndPassword(auth, email, password);
   };
 

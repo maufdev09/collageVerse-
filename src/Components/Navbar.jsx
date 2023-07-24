@@ -8,6 +8,7 @@ const Navbar = () => {
 
 
     const { user, logout} = useContext(AuthContext);
+    console.log(user);
 
     const handleLogOut = () => {
         logout()
@@ -42,6 +43,7 @@ const Navbar = () => {
   </div>
 <div className='navbar-end'>
 {user && (
+            <Link to={`profile`}>
             <div
               className="w-8 mx-5 tooltip tooltip-left"
               data-tip={user.displayName}
@@ -51,7 +53,7 @@ const Navbar = () => {
               ) : (
                 <FaUserCircle className=" text-4xl max-sm:text-2xl mx-3"></FaUserCircle>
               )}
-            </div>
+            </div></Link>
           )}
           {user ? (
             <button onClick={handleLogOut} className="btn text-white bg-black">

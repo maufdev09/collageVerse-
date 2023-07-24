@@ -5,15 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA_GFFDEWS8S9gDrBe0F7xI26iWwKU0aZU",
-  authDomain: "collage-verse.firebaseapp.com",
-  projectId: "collage-verse",
-  storageBucket: "collage-verse.appspot.com",
-  messagingSenderId: "161164974593",
-  appId: "1:161164974593:web:02a32c8950fa22ae997e00"
+  apiKey: "AIzaSyDkknRQE75XCr5WDU1ll1mQVUnhTq5eBg8",
+  authDomain: "collage-v.firebaseapp.com",
+  projectId: "collage-v",
+  storageBucket: "collage-v.appspot.com",
+  messagingSenderId: "388790342223",
+  appId: "1:388790342223:web:547fc7b424736d3ee6103a"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+ const app = initializeApp(firebaseConfig);
 
-export default app
+export default app;

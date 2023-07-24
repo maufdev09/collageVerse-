@@ -36,6 +36,7 @@ const Apply = () => {
   } = useForm();
 
   const img_upload_URL = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+  console.log(img_hosting_token);
 
   const onSubmit = (data) => {
     const {
